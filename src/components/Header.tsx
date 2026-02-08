@@ -28,10 +28,10 @@ const Header = () => {
         : "bg-transparent py-2"
         }`}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
+      <div className="container mx-auto flex h-24 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="SolarFlow Energy" className="h-12 w-auto object-contain" />
+          <img src="/logo.png" alt="SolarFlow Energy" className="h-24 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
