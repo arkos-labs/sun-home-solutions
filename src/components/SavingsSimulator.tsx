@@ -27,7 +27,7 @@ const SavingsSimulator = () => {
     const displayBill = bill ? parseInt(bill) || 0 : defaultBill;
 
     // Hypothèses simplifiées pour la simulation
-    const savingsRatio = 0.70; // 70% d'économie
+    const savingsRatio = 0.92; // 92% d'économie (optimisé)
     const estimatedSavings = Math.round(displayBill * savingsRatio);
     // ROI simplifié : Coût système (ex: 12000) / économie annuelle
     // On borne le ROI entre 5 et 15 ans pour du réalisme
