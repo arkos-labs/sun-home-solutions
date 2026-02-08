@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <path d="M100 20 Q50 20 30 80 Q10 140 100 180 Q190 140 170 80 Q150 20 100 20 Z" fill="#4CAF50" />
+  <path d="M100 20 Q100 100 60 140" stroke="#81C784" stroke-width="5" fill="none" />
+  <text x="100" y="85" font-family="Arial, sans-serif" font-weight="bold" font-size="40" text-anchor="middle" fill="white">ECO2</text>
+  <text x="100" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">Faible C02</text>
+</svg>

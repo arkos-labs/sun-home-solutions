@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sun-home-solutions.vercel.app/sitemap.xml
