@@ -142,7 +142,7 @@ const Index = () => {
                 asChild
               >
                 <Link to="/contact">
-                  Commencer mon projet <ArrowRight className="ml-2 h-4 w-4" />
+                  Parler à un expert <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
 
