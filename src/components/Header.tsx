@@ -31,7 +31,7 @@ const Header = () => {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="SolarFlow Energy" className="h-16 w-auto object-contain" />
+          <img src="/logo.png" alt="SolarFlow Energy" className="h-20 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
