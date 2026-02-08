@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 type SEOHeadProps = {
   title: string;
   description: string;
+  keywords?: string;
   canonical?: string;
   image?: string;
   noindex?: boolean;
@@ -15,6 +16,7 @@ const DEFAULT_IMAGE = "/placeholder.svg";
 const SEOHead = ({
   title,
   description,
+  keywords,
   canonical,
   image = DEFAULT_IMAGE,
   noindex = false,
@@ -26,6 +28,7 @@ const SEOHead = ({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       {canonical && <link rel="canonical" href={canonical} />}
       {noindex && <meta name="robots" content="noindex,nofollow" />}
 

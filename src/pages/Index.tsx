@@ -84,8 +84,9 @@ const Index = () => {
   return (
     <div>
       <SEOHead
-        title="Panneaux solaires pour votre maison"
-        description="Étude photovoltaïque gratuite, aides 2026 et installation RGE partout en France. Estimez vos économies et votre reste à charge."
+        title="Panneaux Solaire & Étude Gratuite"
+        description="Installation de panneaux solaires photovoltaïques. Étude gratuite, rentabilité maximale, et aides de l'État 2026. Réduisez vos factures d'électricité."
+        keywords="panneau solaire, installation photovoltaïque, autoconsommation, rachat surplus, aide état 2026, prime rénov, installateur RGE"
         canonical={`${BASE_URL}/`}
         jsonLd={[localBusinessJsonLd, faqJsonLd]}
       />

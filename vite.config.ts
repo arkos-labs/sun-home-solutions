@@ -43,7 +43,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    mode === "production" && !process.env.VERCEL && prerender({
+    mode === "production" && prerender({
       staticDir: path.resolve(__dirname, "dist"),
       routes,
     }),
