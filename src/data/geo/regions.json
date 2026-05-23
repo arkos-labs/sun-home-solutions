@@ -1,54 +1,80 @@
 [
   {
     "name": "Auvergne-Rhône-Alpes",
-    "slug": "auvergne-rhone-alpes"
+    "slug": "auvergne-rhone-alpes",
+    "sunlight_hours": 2100,
+    "local_savings_percent": 65
   },
   {
     "name": "Bourgogne-Franche-Comté",
-    "slug": "bourgogne-franche-comte"
+    "slug": "bourgogne-franche-comte",
+    "sunlight_hours": 1950,
+    "local_savings_percent": 58
   },
   {
     "name": "Bretagne",
-    "slug": "bretagne"
+    "slug": "bretagne",
+    "sunlight_hours": 1750,
+    "local_savings_percent": 52
   },
   {
     "name": "Centre-Val de Loire",
-    "slug": "centre-val-de-loire"
+    "slug": "centre-val-de-loire",
+    "sunlight_hours": 1850,
+    "local_savings_percent": 55
   },
   {
     "name": "Corse",
-    "slug": "corse"
+    "slug": "corse",
+    "sunlight_hours": 2800,
+    "local_savings_percent": 75
   },
   {
     "name": "Grand Est",
-    "slug": "grand-est"
+    "slug": "grand-est",
+    "sunlight_hours": 1700,
+    "local_savings_percent": 50
   },
   {
     "name": "Hauts-de-France",
-    "slug": "hauts-de-france"
+    "slug": "hauts-de-france",
+    "sunlight_hours": 1600,
+    "local_savings_percent": 45
   },
   {
     "name": "Île-de-France",
-    "slug": "ile-de-france"
+    "slug": "ile-de-france",
+    "sunlight_hours": 1750,
+    "local_savings_percent": 52
   },
   {
     "name": "Normandie",
-    "slug": "normandie"
+    "slug": "normandie",
+    "sunlight_hours": 1650,
+    "local_savings_percent": 48
   },
   {
     "name": "Nouvelle-Aquitaine",
-    "slug": "nouvelle-aquitaine"
+    "slug": "nouvelle-aquitaine",
+    "sunlight_hours": 2200,
+    "local_savings_percent": 68
   },
   {
     "name": "Occitanie",
-    "slug": "occitanie"
+    "slug": "occitanie",
+    "sunlight_hours": 2500,
+    "local_savings_percent": 72
   },
   {
     "name": "Pays de la Loire",
-    "slug": "pays-de-la-loire"
+    "slug": "pays-de-la-loire",
+    "sunlight_hours": 1900,
+    "local_savings_percent": 57
   },
   {
     "name": "Provence-Alpes-Côte d'Azur",
-    "slug": "provence-alpes-cote-d-azur"
+    "slug": "provence-alpes-cote-d-azur",
+    "sunlight_hours": 2750,
+    "local_savings_percent": 75
   }
 ]
