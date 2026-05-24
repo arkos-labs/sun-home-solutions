@@ -26,13 +26,13 @@ export const HeroSection = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-center justify-center space-y-4 max-w-6xl text-center w-full"
           >
-            <div className="space-y-4 flex flex-col items-center">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[5.5rem] xl:text-[6.5rem] leading-[1.1] font-heading font-extrabold tracking-tighter text-white drop-shadow-2xl">
+            <div className="space-y-3 flex flex-col items-center">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] leading-[1.1] font-heading font-extrabold tracking-tighter text-white drop-shadow-2xl">
                 Votre toit produit <br className="hidden md:block" />
                 l'énergie <span className="text-[#FFD100]">que</span> <br className="hidden md:block" />
                 <span className="text-[#FFD100]">vous payez trop cher.</span>
               </h1>
-              <p className="max-w-[800px] text-gray-100 text-xl md:text-2xl lg:text-3xl font-body mx-auto drop-shadow-md font-medium">
+              <p className="max-w-[800px] text-gray-100 text-lg md:text-xl lg:text-2xl font-body mx-auto drop-shadow-md font-medium">
                 Étude photovoltaïque personnalisée, en 2 minutes et sans engagement.
                 On vous accompagne du début à la fin de votre projet.
               </p>
