@@ -1,94 +1,163 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Home, Building } from "lucide-react";
+import { Check, CheckCircle2 } from "lucide-react";
 
 export const LeadFunnelSection = () => {
-  const [step, setStep] = useState(1);
-  const [propertyType, setPropertyType] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 1000);
+  };
 
   return (
-    <section className="py-24 bg-solera-dark text-white relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden" id="simulateur">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="bg-white/10 text-[#FFD100] px-4 py-1.5 rounded-full text-sm font-medium tracking-wide mb-6 inline-block">
-              2 minutes pour estimer votre potentiel
-            </span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
-              Quel type de bien souhaitez-vous équiper ?
-            </h2>
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl text-solera-dark">
-            
-            {/* Simple Step 1 Simulation */}
-            {step === 1 && (
-              <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <div className="grid md:grid-cols-2 gap-6">
-                  
-                  <button 
-                    onClick={() => setPropertyType("maison")}
-                    className={`flex flex-col items-center justify-center p-10 rounded-2xl border-2 transition-all duration-200 ${propertyType === 'maison' ? 'border-[#FFD100] bg-[#FFD100]/5' : 'border-gray-200 hover:border-[#FFD100] hover:bg-gray-50'}`}
-                  >
-                    <Home className={`h-16 w-16 mb-6 ${propertyType === 'maison' ? 'text-[#FFD100]' : 'text-gray-400'}`} />
-                    <h3 className="text-xl font-bold font-heading mb-2">Maison individuelle</h3>
-                    <p className="text-muted-foreground text-center text-sm">Je suis propriétaire d'une maison avec toiture dégagée.</p>
-                  </button>
-
-                  <button 
-                    onClick={() => setPropertyType("batiment")}
-                    className={`flex flex-col items-center justify-center p-10 rounded-2xl border-2 transition-all duration-200 ${propertyType === 'batiment' ? 'border-[#FFD100] bg-[#FFD100]/5' : 'border-gray-200 hover:border-[#FFD100] hover:bg-gray-50'}`}
-                  >
-                    <Building className={`h-16 w-16 mb-6 ${propertyType === 'batiment' ? 'text-[#FFD100]' : 'text-gray-400'}`} />
-                    <h3 className="text-xl font-bold font-heading mb-2">Bâtiment professionnel</h3>
-                    <p className="text-muted-foreground text-center text-sm">Hangar, local commercial, exploitation agricole.</p>
-                  </button>
-
-                </div>
-
-                <div className="mt-12 flex justify-between items-center border-t border-gray-100 pt-8">
-                  <div className="flex gap-2">
-                    <div className="h-2 w-8 bg-[#FFD100] rounded-full"></div>
-                    <div className="h-2 w-2 bg-gray-200 rounded-full"></div>
-                    <div className="h-2 w-2 bg-gray-200 rounded-full"></div>
-                    <div className="h-2 w-2 bg-gray-200 rounded-full"></div>
-                  </div>
-                  <Button 
-                    disabled={!propertyType}
-                    onClick={() => setStep(2)}
-                    className="bg-solera-dark text-white hover:bg-solera-dark/90 rounded-full px-8 py-6 text-base font-medium"
-                  >
-                    Étape suivante <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-            )}
-
-            {/* Step 2 Placehoder */}
-            {step === 2 && (
-              <div className="animate-in fade-in slide-in-from-right-4 duration-500 text-center py-12">
-                <h3 className="text-2xl font-bold font-heading mb-4">Merci pour cette première info !</h3>
-                <p className="text-muted-foreground mb-8">
-                  Le reste du simulateur sera développé très prochainement.
+          {!submitted ? (
+            <div className="bg-[#F7F9F8] rounded-[2rem] p-6 sm:p-10 lg:p-14 border border-gray-100 shadow-sm">
+              
+              {/* Form */}
+              <div className="w-full">
+                <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-[#0F172A] tracking-tight mb-2">
+                  Vos coordonnées
+                </h2>
+                <p className="text-gray-500 mb-10 text-lg">
+                  Laissez-nous vos coordonnées pour être rappelé par l'un de nos conseillers.
                 </p>
-                <Button 
-                  onClick={() => setStep(1)}
-                  variant="outline"
-                  className="rounded-full px-8"
-                >
-                  Retour
-                </Button>
-              </div>
-            )}
 
-          </div>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div className="space-y-1">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-bold text-[#0F172A]">Prénom</label>
+                        <span className="text-red-400 font-bold">*</span>
+                      </div>
+                      <input 
+                        required
+                        type="text" 
+                        className="w-full px-4 py-3.5 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-[#FFD100] outline-none transition-all text-sm bg-white"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-bold text-[#0F172A]">Nom</label>
+                        <span className="text-red-400 font-bold">*</span>
+                      </div>
+                      <input 
+                        required
+                        type="text" 
+                        className="w-full px-4 py-3.5 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-[#FFD100] outline-none transition-all text-sm bg-white"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div className="space-y-1">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-bold text-[#0F172A]">Code postal</label>
+                        <span className="text-red-400 font-bold">*</span>
+                      </div>
+                      <input 
+                        required
+                        type="text" 
+                        className="w-full px-4 py-3.5 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-[#FFD100] outline-none transition-all text-sm bg-white"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-bold text-[#0F172A]">Ville</label>
+                        <span className="text-red-400 font-bold">*</span>
+                      </div>
+                      <input 
+                        required
+                        type="text" 
+                        className="w-full px-4 py-3.5 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-[#FFD100] outline-none transition-all text-sm bg-white"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div className="space-y-1">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-bold text-[#0F172A]">Téléphone portable</label>
+                        <span className="text-red-400 font-bold">*</span>
+                      </div>
+                      <input 
+                        required
+                        type="tel" 
+                        className="w-full px-4 py-3.5 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-[#FFD100] outline-none transition-all text-sm bg-white"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-bold text-[#0F172A]">Facture moyenne (optionnel)</label>
+                      </div>
+                      <select className="w-full px-4 py-3.5 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-[#FFD100] outline-none transition-all text-sm bg-white text-gray-700">
+                        <option value="">Sélectionnez...</option>
+                        <option value="1">Moins de 100€</option>
+                        <option value="2">100€ à 200€</option>
+                        <option value="3">Plus de 200€</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <div className="flex justify-between">
+                      <label className="text-sm font-bold text-[#0F172A]">Mail</label>
+                      <span className="text-red-400 font-bold">*</span>
+                    </div>
+                    <input 
+                      required
+                      type="email" 
+                      className="w-full px-4 py-3.5 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-[#FFD100] outline-none transition-all text-sm bg-white"
+                    />
+                  </div>
+
+                  <div className="pt-6 flex justify-end">
+                    <Button 
+                      type="submit"
+                      disabled={loading}
+                      className="bg-[#0F172A] text-white hover:bg-[#0F172A]/90 rounded-xl px-10 py-6 text-base font-bold shadow-md transition-all"
+                    >
+                      {loading ? "Traitement..." : "Être rappelé"} 
+                    </Button>
+                  </div>
+                </form>
+              </div>
+
+
+
+            </div>
+          ) : (
+            <div className="bg-white rounded-3xl p-12 shadow-xl border border-gray-100 text-solera-dark text-center animate-in zoom-in-95 duration-500 max-w-2xl mx-auto">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="h-10 w-10 text-green-600" />
+              </div>
+              <h3 className="text-3xl font-bold font-heading mb-4 text-[#0F172A]">Demande envoyée !</h3>
+              <p className="text-gray-600 text-lg mb-8">
+                Merci ! Vos coordonnées ont bien été enregistrées. Un de nos conseillers va vous rappeler dans les plus brefs délais pour votre étude gratuite.
+              </p>
+              <Button 
+                onClick={() => setSubmitted(false)}
+                variant="outline"
+                className="rounded-xl px-8 font-bold border-gray-300"
+              >
+                Retour
+              </Button>
+            </div>
+          )}
         </div>
 
       </div>
-      
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-[#FFD100]/5 rounded-full blur-3xl pointer-events-none"></div>
     </section>
   );
 };
