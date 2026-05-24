@@ -50,13 +50,7 @@ export const TeamSection = () => {
 
           <div className="md:w-1/2 relative">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-gray-100 shadow-xl border border-gray-200">
-               {/* Team Photo Placeholder */}
-               <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gradient-to-tr from-gray-200 to-gray-50">
-                 <div className="flex flex-col items-center gap-4">
-                   <Users className="h-12 w-12 text-gray-300" />
-                   <span>[Photo de l'équipe Solera]</span>
-                 </div>
-               </div>
+               <img src="/team.png" alt="L'équipe Solera" className="absolute inset-0 w-full h-full object-cover" />
             </div>
             
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden sm:block">

@@ -42,16 +42,9 @@ export const CoverageMapSection = () => {
           </div>
 
           <div className="lg:w-1/2 relative flex justify-center">
-            {/* Minimalist Map Placeholder - Ideally an SVG Map goes here */}
+            {/* Minimalist Map Image */}
             <div className="relative w-full max-w-[500px] aspect-square bg-gray-100 rounded-[3rem] border border-gray-200 overflow-hidden flex items-center justify-center">
-               <div className="text-center text-gray-400">
-                 [Carte de France Stylisée]
-                 <div className="flex flex-wrap justify-center gap-4 mt-4 opacity-50 px-8">
-                   {[...Array(15)].map((_, i) => (
-                     <div key={i} className="h-3 w-3 bg-[#FFD100] rounded-full shadow-sm"></div>
-                   ))}
-                 </div>
-               </div>
+               <img src="/coverage_map.png" alt="Carte de France des zones couvertes" className="absolute inset-0 w-full h-full object-cover" />
             </div>
           </div>
           
